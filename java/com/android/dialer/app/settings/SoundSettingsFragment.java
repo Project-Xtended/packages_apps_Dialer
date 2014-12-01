@@ -167,6 +167,11 @@ public class SoundSettingsFragment extends PreferenceFragment
       int index = mDtmfToneLength.findIndexOfValue((String) objValue);
       Settings.System.putInt(
           getActivity().getContentResolver(), Settings.System.DTMF_TONE_TYPE_WHEN_DIALING, index);
+    } else if (preference == mPlayDtmfTone) {
+      Settings.System.putInt(
+          getActivity().getContentResolver(),
+          Settings.System.DTMF_TONE_WHEN_DIALING,
+          mPlayDtmfTone.isChecked() ? PLAY_DTMF_TONE : NO_DTMF_TONE);
     }
     return true;
   }
@@ -182,13 +187,7 @@ public class SoundSettingsFragment extends PreferenceFragment
           .show();
       return true;
     }
-    if (preference == mPlayDtmfTone) {
-      Settings.System.putInt(
-          getActivity().getContentResolver(),
-          Settings.System.DTMF_TONE_WHEN_DIALING,
-          mPlayDtmfTone.isChecked() ? PLAY_DTMF_TONE : NO_DTMF_TONE);
-    }
-    return true;
+      return true;
   }
 
   /** Updates the summary text on the ringtone preference with the name of the ringtone. */
