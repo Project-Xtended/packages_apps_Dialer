@@ -26,4 +26,25 @@
         <item>"1"</item>
     </string-array>
 
+    <!-- Proximity speaker delay entries. -->
+    <string-array name="proximity_delay_entries" translatable="false">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </string-array>
+
+    <!-- Proximity speaker delay values. -->
+    <string-array name="proximity_delay_values" translatable="false">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </string-array>
 </resources>
