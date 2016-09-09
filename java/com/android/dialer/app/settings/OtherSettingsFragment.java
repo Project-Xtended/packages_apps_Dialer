@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import com.android.dialer.app.R;
@@ -51,6 +52,11 @@ public class OtherSettingsFragment extends PreferenceFragment
     mEnablePostcall = (SwitchPreference) findPreference(ENABLE_POST_CALL);
     mEnablePostcall.setChecked(mEnabled);
     mEnablePostcall.setOnPreferenceChangeListener(this);
+
+    PreferenceScreen ps = getPreferenceScreen();
+    Preference inCallVibration = findPreference(
+        context.getString(R.string.incall_vibration_category_key));
+    ps.removePreference(inCallVibration);
 
   }
 
