@@ -5,3 +5,6 @@
     @com.android.dialer.proguard.UsedByReflection *;
 }
 -keep class android.support.design.widget.FloatingActionButton$* { *; }
+
+# Keep ExtendedLookupDirectories for assets/contacts_extensions.properties
+-keep class com.android.dialer.lookup.ExtendedLookupDirectories { *; }

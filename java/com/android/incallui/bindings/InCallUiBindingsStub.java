@@ -20,13 +20,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 
+import com.android.dialer.lookup.ReverseLookupService;
+
 /** Default implementation for InCallUi bindings. */
 public class InCallUiBindingsStub implements InCallUiBindings {
 
   @Override
   @Nullable
   public PhoneNumberService newPhoneNumberService(Context context) {
-    return null;
+    return new ReverseLookupService(context);
   }
 
   @Override

@@ -90,6 +90,12 @@ public class DialerSettingsActivity extends AppCompatPreferenceActivity {
     quickResponseSettingsHeader.intent = quickResponseSettingsIntent;
     target.add(quickResponseSettingsHeader);
 
+    final Header lookupSettingsHeader = new Header();
+        lookupSettingsHeader.titleRes = com.android.dialer.R.string.lookup_settings_label;
+        lookupSettingsHeader.summaryRes = com.android.dialer.R.string.lookup_settings_description;
+        lookupSettingsHeader.fragment = LookupSettingsFragment.class.getName();
+        target.add(lookupSettingsHeader);
+
     TelephonyManager telephonyManager =
         (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 

@@ -113,7 +113,10 @@
     android:supportsRtl="true"
     android:usesCleartextTraffic="false">
 
-    <uses-library android:name="com.qualcomm.qti.smartsearch" />
+        <provider android:name="com.android.dialer.lookup.LookupProvider"
+                android:authorities="com.android.dialer.provider"
+                android:exported="false"
+                android:multiprocess="false" />
   </application>
 
 </manifest>
