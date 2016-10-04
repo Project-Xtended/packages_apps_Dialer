@@ -69,6 +69,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import android.text.SpannableStringBuilder;
+import android.provider.Settings;
+import java.util.ArrayList;
+import java.util.Locale;
+
 /** Creates a notification for calls that the user missed (neither answered nor rejected). */
 public class MissedCallNotifier implements Worker<Pair<Integer, String>, Void> {
 
@@ -394,15 +399,27 @@ public class MissedCallNotifier implements Worker<Pair<Integer, String>, Void> {
   }
 
   private Notification.Builder createNotificationBuilder() {
-    return new Notification.Builder(context)
-        .setGroup(MissedCallConstants.GROUP_KEY)
-        .setSmallIcon(android.R.drawable.stat_notify_missed_call)
-        .setColor(ThemeComponent.get(context).theme().getColorPrimary())
-        .setAutoCancel(true)
-        .setOnlyAlertOnce(true)
-        .setShowWhen(true)
-        .setDefaults(Notification.DEFAULT_VIBRATE);
-  }
+     Notification.Builder builder = new Notification.Builder(context);
+        if (Settings.System.getInt(context.getContentResolver(),
+            Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1) {
+            builder.setSmallIcon(R.drawable.stat_notify_missed_call_breath)
+                   .setGroup(MissedCallConstants.GROUP_KEY)
+                   .setColor(ThemeComponent.get(context).theme().getColorPrimary())
+                   .setAutoCancel(true)
+                   .setOnlyAlertOnce(true)
+                   .setShowWhen(true)
+                   .setDefaults(Notification.DEFAULT_VIBRATE);
+        } else {
+            builder.setSmallIcon(R.drawable.stat_notify_missed_call)
+                   .setGroup(MissedCallConstants.GROUP_KEY)
+                   .setColor(ThemeComponent.get(context).theme().getColorPrimary())
+                   .setAutoCancel(true)
+                   .setOnlyAlertOnce(true)
+                   .setShowWhen(true)
+                   .setDefaults(Notification.DEFAULT_VIBRATE);
+        }
+      return builder;
+    }
 
   private Notification.Builder createNotificationBuilder(@NonNull NewCall call) {
     Builder builder =
