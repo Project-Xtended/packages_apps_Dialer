@@ -19,7 +19,7 @@
       android:id="@+id/hold_phone_icon"
       android:layout_width="18dp"
       android:layout_height="18dp"
-      android:src="@drawable/quantum_ic_call_white_18"
+      android:src="@drawable/ic_phone_paused_white_18dp"
       android:contentDescription="@null"/>
 
     <TextView

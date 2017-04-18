@@ -68,7 +68,7 @@ public class OnHoldFragment extends Fragment {
         .setImageResource(
             secondaryInfo.isVideoCall
                 ? R.drawable.quantum_ic_videocam_white_18
-                : R.drawable.quantum_ic_call_white_18);
+                : R.drawable.ic_phone_paused_white_18dp);
     view.addOnAttachStateChangeListener(
         new OnAttachStateChangeListener() {
           @Override
