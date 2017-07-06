@@ -214,7 +214,8 @@ public class InCallActivityCommon {
       // populated with the previous DTMF text.  The dialpad is actually shown and populated
       // in onResume() to ensure the hosting fragment has been inflated and is ready to receive it.
       if (icicle.containsKey(INTENT_EXTRA_SHOW_DIALPAD)) {
-        boolean showDialpad = icicle.getBoolean(INTENT_EXTRA_SHOW_DIALPAD);
+        boolean showDialpad = icicle.getBoolean(INTENT_EXTRA_SHOW_DIALPAD)
+            || showDialpadRequest == DIALPAD_REQUEST_SHOW;
         showDialpadRequest = showDialpad ? DIALPAD_REQUEST_SHOW : DIALPAD_REQUEST_HIDE;
         animateDialpadOnShow = false;
       }
