@@ -1,3 +1,4 @@
+
 <!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -109,6 +110,8 @@
     android:name="com.android.dialer.binary.aosp.AospDialerApplication"
     android:supportsRtl="true"
     android:usesCleartextTraffic="false">
+
+    <uses-library android:name="com.qualcomm.qti.smartsearch" />
   </application>
 
 </manifest>
