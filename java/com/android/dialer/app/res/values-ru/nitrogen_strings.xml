@@ -18,4 +18,6 @@
     <string name="enable_post_call_title">Уведомление после звонка</string>
     <string name="enable_post_call_summary">Включить уведомление внизу экрана после звонка</string>
 
+    <string name="smart_mute_title">Отключение звука</string>
+    <string name="smart_mute_summary">Отключать звук входящего вызова переворотом устройства</string>
 </resources>

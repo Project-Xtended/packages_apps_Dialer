@@ -23,4 +23,10 @@
         android:title="@string/enable_post_call_title"
         android:summary="@string/enable_post_call_summary" />
 
+    <SwitchPreference
+        android:key="button_smart_mute"
+        android:title="@string/smart_mute_title"
+        android:summary="@string/smart_mute_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
