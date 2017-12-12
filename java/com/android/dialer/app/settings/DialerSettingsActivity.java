@@ -135,6 +135,11 @@ public class DialerSettingsActivity extends AppCompatPreferenceActivity {
       target.add(accessibilitySettingsHeader);
     }
 
+    Header OtherSettingsHeader = new Header();
+    OtherSettingsHeader.titleRes = R.string.other_settings_label;
+    OtherSettingsHeader.fragment = OtherSettingsFragment.class.getName();
+    target.add(OtherSettingsHeader);
+
     Header aboutPhoneHeader = new Header();
     aboutPhoneHeader.titleRes = R.string.about_phone_label;
     aboutPhoneHeader.fragment = AboutPhoneFragment.class.getName();
