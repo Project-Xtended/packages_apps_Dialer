@@ -115,6 +115,11 @@ public class DialerSettingsActivity extends AppCompatPreferenceActivity {
     TelephonyManager telephonyManager =
         (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
+    Header OtherSettingsHeader = new Header();
+    OtherSettingsHeader.titleRes = R.string.other_settings_label;
+    OtherSettingsHeader.fragment = OtherSettingsFragment.class.getName();
+    target.add(OtherSettingsHeader);
+
     // "Call Settings" (full settings) is shown if the current user is primary user and there
     // is only one SIM. Otherwise, "Calling accounts" is shown.
     boolean isPrimaryUser = isPrimaryUser();
@@ -171,6 +176,8 @@ public class DialerSettingsActivity extends AppCompatPreferenceActivity {
           new Intent("com.android.dialer.app.settings.SHOW_ASSISTED_DIALING_SETTINGS");
       target.add(assistedDialingSettingsHeader);
     }
+
+
 
     if (showAbout()) {
       Header aboutPhoneHeader = new Header();
