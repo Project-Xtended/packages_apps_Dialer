@@ -46,7 +46,7 @@ class HumanInteractionClassifier extends Classifier {
     enabled =
         ConfigProviderComponent.get(context)
             .getConfigProvider()
-            .getBoolean(CONFIG_ANSWER_FALSE_TOUCH_DETECTION_ENABLED, true);
+            .getBoolean(CONFIG_ANSWER_FALSE_TOUCH_DETECTION_ENABLED, false);
 
     strokeClassifiers =
         new StrokeClassifier[] {
