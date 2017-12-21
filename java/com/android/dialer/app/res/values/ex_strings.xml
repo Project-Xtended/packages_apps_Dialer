@@ -12,12 +12,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="other_settings_label">Другие настройки</string>
+    <string name="other_settings_label">Other settings</string>
 
     <!-- Dialer postcall -->
-    <string name="enable_post_call_title">Уведомление после звонка</string>
-    <string name="enable_post_call_summary">Включить уведомление внизу экрана после звонка</string>
+    <string name="enable_post_call_title">Post call snackbar</string>
+    <string name="enable_post_call_summary">Enable post call notifications at the bottom of screen</string>
 
-    <string name="smart_mute_title">Отключение звука</string>
-    <string name="smart_mute_summary">Отключать звук входящего вызова переворотом устройства</string>
+    <string name="smart_mute_title">Smart mute</string>
+    <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
+
 </resources>
