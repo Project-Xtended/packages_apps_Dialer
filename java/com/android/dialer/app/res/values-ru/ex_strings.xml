@@ -21,4 +21,14 @@
     <string name="smart_mute_title">Отключение звука</string>
     <string name="smart_mute_summary">Отключать звук входящего вызова переворотом устройства</string>
 
+    <!-- Proximity speaker -->
+    <string name="speaker_settings_label">Датчик приближения и громкая связь</string>
+    <string name="prox_auto_speaker_title">Включение громкой связи по датчику приближения</string>
+    <string name="prox_auto_speaker_summary">Автоматически включать громкую связь, при удалении телефона от уха</string>
+    <string name="prox_auto_speaker_delay_title">Задержка включения громкой связи</string>
+    <string name="prox_auto_speaker_delay_dialog_title">Задержка включения громкой связи в (мс)</string>
+    <string name="prox_auto_speaker_delay_summary">Громкая связь будет включена через <xliff:g id="number">%d</xliff:g> мс</string>
+    <string name="prox_auto_speaker_incall_only_title">Только во время входящего вызова</string>
+    <string name="prox_auto_speaker_incall_only_summary_on">При исходящих звонках функция активируется только после ответа на вызов</string>
+    <string name="prox_auto_speaker_incall_only_summary_off">Функция активна при любых вызовах (по умолчанию)</string>
 </resources>
