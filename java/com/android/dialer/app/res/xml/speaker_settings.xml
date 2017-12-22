@@ -41,4 +41,10 @@
         android:defaultValue="false"
         android:dependency="proximity_auto_speaker" />
 
+    <SwitchPreference
+        android:key="proximity_auto_answer_incall_only"
+        android:title="@string/prox_auto_answer_incall_only_title"
+        android:summary="@string/prox_auto_answer_incall_only_summary"
+        android:persistent="false"
+        android:defaultValue="false" />
 </PreferenceScreen>
