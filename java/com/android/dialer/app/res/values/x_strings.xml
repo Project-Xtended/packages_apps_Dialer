@@ -57,4 +57,7 @@
     <string name="prox_auto_speaker_incall_only_summary_on">On outgoing calls, listener will only become active after the receiving party answers</string>
     <string name="prox_auto_speaker_incall_only_summary_off">Listener will be active during all offhook call states (default)</string>
 
+    <string name="prox_auto_answer_incall_only_title">Auto answer</string>
+    <string name="prox_auto_answer_incall_only_summary">Use proximity sensor for autoanswer</string>
+
 </resources>
