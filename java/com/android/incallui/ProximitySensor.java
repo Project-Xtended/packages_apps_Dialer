@@ -38,6 +38,7 @@ import com.android.incallui.audiomode.AudioModeProvider;
 import com.android.incallui.audiomode.AudioModeProvider.AudioModeListener;
 import com.android.incallui.call.CallList;
 import com.android.incallui.call.DialerCall;
+import android.telecom.TelecomManager;
 
 /**
  * Class manages the proximity sensor for the in-call UI. We enable the proximity sensor while the
@@ -62,7 +63,9 @@ public class ProximitySensor
   private boolean uiShowing = false;
   private boolean hasIncomingCall = false;
   private boolean isPhoneOutgoing = false;
+  private boolean isPhoneRinging = false;
   private boolean proximitySpeaker = false;
+  private boolean isProxSensorNear = false;
   private boolean isProxSensorFar = true;
   private int proxSpeakerDelay = 3000;
   private boolean isPhoneOffhook = false;
@@ -71,6 +74,10 @@ public class ProximitySensor
   private boolean isVideoCall;
   private boolean isRttCall;
   private Context mContext;
+  private final TelecomManager telecomManager;
+
+  private static final int SENSOR_SENSITIVITY = 4;
+
    private final Handler handler = new Handler();
    private final Runnable activateSpeaker = new Runnable() {
     @Override
@@ -86,6 +93,7 @@ public class ProximitySensor
     mContext = context;
     Trace.beginSection("ProximitySensor.Constructor");
     powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+    telecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
     if (powerManager.isWakeLockLevelSupported(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK)) {
       proximityWakeLock =
           powerManager.newWakeLock(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK, TAG);
@@ -169,7 +177,8 @@ public class ProximitySensor
       setProxSpeaker(isProxSensorFar);
     }
      if (hasIncomingCall) {
-
+      updateProxRing();
+      answerProx(isProxSensorNear);
       updateProximitySensorMode();
     }
   }
@@ -188,8 +197,14 @@ public class ProximitySensor
       isProxSensorFar = false;
     } else {
       isProxSensorFar = true;
+      isProxSensorNear = false;
     }
+    if (event.values[0] <= SENSOR_SENSITIVITY ) {
+            isProxSensorNear = true;
+        }
+     Log.i(this, "Proximity sensor changed");
      setProxSpeaker(isProxSensorFar);
+     answerProx(isProxSensorNear);
   }
    @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -333,6 +348,27 @@ public class ProximitySensor
       }
     }
   }
+
+ private void updateProxRing() {
+        if (sensor != null && proxSensor != null) {
+            if (hasIncomingCall) {
+                sensor.registerListener(this, proxSensor,
+                        SensorManager.SENSOR_DELAY_NORMAL);
+            } else {
+                sensor.unregisterListener(this);
+            }
+        }
+    }
+
+ private void answerProx(boolean isNear) {
+    final boolean proxIncallAnswPref =
+                (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PROXIMITY_AUTO_ANSWER_INCALL_ONLY, 0) == 1);
+    if (isNear && telecomManager != null && !isScreenReallyOff() && proxIncallAnswPref) {
+    telecomManager.acceptRingingCall();
+    }
+ }
+
    private void setProxSpeaker(final boolean speaker) {
     // remove any pending audio changes scheduled
     handler.removeCallbacks(activateSpeaker);
