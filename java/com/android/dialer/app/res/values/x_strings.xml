@@ -62,4 +62,11 @@
     <string name="prox_auto_answer_incall_only_title">Auto answer</string>
     <string name="prox_auto_answer_incall_only_summary">Use proximity sensor for autoanswer</string>
 
+    <!-- BT Auto Answer -->
+    <string name="auto_answer_call_title">Autoanswer</string>
+    <string name="auto_answer_call_summary">Use autoanswer with connected BT or Wired headset</string>
+    <string name="auto_answer_delay_title">Autoanswer delay</string>
+    <string name="auto_answer_dialog_title">Autoanswer delay in (ms)</string>
+    <string name="auto_answer_delay_summary">Autoanswer will be activated in <xliff:g id="number">%d</xliff:g> ms</string>
+
 </resources>
