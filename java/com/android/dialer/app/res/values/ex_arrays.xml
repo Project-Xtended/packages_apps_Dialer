@@ -36,4 +36,29 @@
         <item>4000</item>
         <item>5000</item>
     </string-array>
+
+    <string-array name="auto_answer_entries" translatable="false">
+        <item>100</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>4000</item>
+	<item>5000</item>
+    </string-array>
+
+    <!-- Proximity speaker delay values. -->
+    <string-array name="auto_answer_values" translatable="false">
+        <item>100</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </string-array>
 </resources>

@@ -34,4 +34,10 @@
 
     <string name="prox_auto_answer_incall_only_title">Автоматический ответ</string>
     <string name="prox_auto_answer_incall_only_summary">Автоответ на входящий звонок с использованием датчика приближения</string>
+
+    <string name="auto_answer_call_title">Автоответ с гарнитурой</string>
+    <string name="auto_answer_call_summary">Автоответ на звонок при подключенной проводной или беспроводной гарнитуры</string>
+    <string name="auto_answer_delay_title">Задержка автоответа</string>
+    <string name="auto_answer_dialog_title">Задержка автоответа в (мс)</string>
+    <string name="auto_answer_delay_summary">Автоответ будет включен через <xliff:g id="number">%d</xliff:g> мс</string>
 </resources>
