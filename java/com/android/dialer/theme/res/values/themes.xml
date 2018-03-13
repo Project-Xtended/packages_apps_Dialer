@@ -19,6 +19,8 @@
   <style name="DialerThemeBase" parent="@style/Theme.AppCompat.Light.DarkActionBar">
     <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
     <item name="android:textColorSecondary">@color/dialer_secondary_text_color</item>
+    <item name="android:navigationBarColor">@color/navigation_bar_color</item>
+    <item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
     <!-- This is used for title bar color in recents -->
     <item name="android:colorPrimary">@color/titlebar_in_recents_background_color</item>
     <item name="android:colorPrimaryDark">@color/dialer_theme_color_dark</item>
@@ -38,6 +40,8 @@
   <style name="DialerThemeBase.NoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
     <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
     <item name="android:textColorSecondary">@color/dialer_secondary_text_color</item>
+    <item name="android:navigationBarColor">@color/navigation_bar_color</item>
+    <item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
     <!-- This is used for title bar color in recents -->
     <item name="android:colorPrimary">@color/titlebar_in_recents_background_color</item>
     <item name="android:colorPrimaryDark">@color/dialer_theme_color_dark</item>

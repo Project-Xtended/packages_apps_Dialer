@@ -68,4 +68,6 @@
 
   <!-- Color of call type icons in call log, e.g. voicemail, video, WiFi, HD etc. -->
   <color name="call_type_icon_color">#89000000</color>
+
+  <color name="navigation_bar_color">@android:color/white</color>
 </resources>
