@@ -23,4 +23,9 @@
         android:title="@string/enable_post_call_title"
         android:summary="@string/enable_post_call_summary" />
 
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="incall_enable_dnd"
+        android:title="@string/incall_enable_dnd_title"/>
+
 </PreferenceScreen>

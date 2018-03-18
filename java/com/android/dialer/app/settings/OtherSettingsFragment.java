@@ -16,7 +16,11 @@
 
 package com.android.dialer.app.settings;
 
+import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -35,6 +39,9 @@ public class OtherSettingsFragment extends PreferenceFragment
   private boolean mEnabled;
 
   private SwitchPreference mEnablePostcall;
+  private SwitchPreference enableDndInCall;
+
+  private NotificationManager notificationManager;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,10 @@ public class OtherSettingsFragment extends PreferenceFragment
     mEnablePostcall.setChecked(mEnabled);
     mEnablePostcall.setOnPreferenceChangeListener(this);
 
+    enableDndInCall = (SwitchPreference) findPreference("incall_enable_dnd");
+    enableDndInCall.setOnPreferenceChangeListener(this);
+    notificationManager = context.getSystemService(NotificationManager.class);
+
   }
 
   @Override
@@ -63,6 +74,31 @@ public class OtherSettingsFragment extends PreferenceFragment
           .putBoolean(ENABLE_POST_CALL, value)
           .apply();
         return true;
+    } else if (preference == enableDndInCall) {
+      boolean newValue = (Boolean) objValue;
+      if (newValue && !notificationManager.isNotificationPolicyAccessGranted()) {
+        new AlertDialog.Builder(getContext())
+            .setMessage(R.string.incall_dnd_dialog_message)
+            .setPositiveButton(R.string.allow, new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                Intent intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+                startActivity(intent);
+              }
+            })
+            .setNegativeButton(R.string.deny, new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+              }
+            })
+            .show();
+
+        // At this time, it is unknown whether the user granted the permission
+        return false;
+      }
+      return true;
     }
     return false;
   }
