@@ -43,4 +43,15 @@
     android:key="@string/dtmf_tone_length_preference_key"
     android:title="@string/dtmf_tone_length_title"/>
 
+  <PreferenceCategory
+    android:key="@string/incall_category_key"
+    android:title="@string/incall_category_title">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="incall_enable_dnd"
+        android:title="@string/incall_enable_dnd_title"/>
+
+  </PreferenceCategory>
+
 </PreferenceScreen>
