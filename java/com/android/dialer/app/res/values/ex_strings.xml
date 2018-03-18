@@ -40,4 +40,8 @@
     <string name="auto_answer_delay_title">Autoanswer delay</string>
     <string name="auto_answer_dialog_title">Autoanswer delay in (ms)</string>
     <string name="auto_answer_delay_summary">Autoanswer will be activated in <xliff:g id="number">%d</xliff:g> ms</string>
+
+    <!-- DND during call -->
+    <string name="incall_enable_dnd_title">Enable Do Not Disturb during call</string>
+
 </resources>
