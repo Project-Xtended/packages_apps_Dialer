@@ -43,5 +43,6 @@
 
     <!-- DND during call -->
     <string name="incall_enable_dnd_title">Включить "Не беспокоить" во время звонка</string>
+    <string name="incall_enable_dnd_summary">Для использования этой опции необходимо предоставить доступ приложению ""Телефон"" к изменению настроек режима ""Не беспокоить""</string>
 
 </resources>

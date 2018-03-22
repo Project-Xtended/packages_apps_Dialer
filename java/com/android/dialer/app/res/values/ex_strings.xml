@@ -43,5 +43,6 @@
 
     <!-- DND during call -->
     <string name="incall_enable_dnd_title">Enable Do Not Disturb during call</string>
+    <string name="incall_enable_dnd_summary">To use this option, you need to grant access for Dialer app to change the settings of the DND mode</string>
 
 </resources>
