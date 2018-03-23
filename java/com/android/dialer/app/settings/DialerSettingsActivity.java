@@ -177,8 +177,6 @@ public class DialerSettingsActivity extends AppCompatPreferenceActivity {
       target.add(assistedDialingSettingsHeader);
     }
 
-
-
     if (showAbout()) {
       Header aboutPhoneHeader = new Header();
       aboutPhoneHeader.titleRes = R.string.about_phone_label;
