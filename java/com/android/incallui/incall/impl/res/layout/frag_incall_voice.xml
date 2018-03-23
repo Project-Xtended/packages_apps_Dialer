@@ -56,7 +56,6 @@
       <!-- We have to keep deprecated singleLine to allow long text being truncated with ellipses.
                  b/31396406 -->
       <com.android.incallui.autoresizetext.CustomAutoResizeTextView
-        xmlns:ex="http://schemas.android.com/apk/res-auto"
         android:id="@id/contactgrid_contact_name"
         android:layout_width="match_parent"
         android:layout_height="72dp"
@@ -69,7 +68,7 @@
         android:singleLine="false"
         android:textAppearance="@style/Dialer.Incall.TextAppearance.Large"
         android:textSize="@dimen/answer_contact_name_text_size"
-        ex:resizing_text_min_size="@dimen/answer_contact_name_min_size"/>
+        app:resizing_text_min_size="@dimen/answer_contact_name_min_size"/>
 
       <include
         layout="@layout/incall_contactgrid_bottom_row"

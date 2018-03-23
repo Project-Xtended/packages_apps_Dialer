@@ -30,11 +30,13 @@ public class OtherSettingsFragment extends PreferenceFragment
     implements Preference.OnPreferenceChangeListener {
 
   private static final String ENABLE_POST_CALL = "enable_post_call";
+  private static final String FULLSCREEN_CALLER_PHOTO = "fullscreen_caller_photo";
 
   private SharedPreferences mPrefs;
   private boolean mEnabled;
 
   private SwitchPreference mEnablePostcall;
+  private SwitchPreference mFullscreenCallerPhoto;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,9 @@ public class OtherSettingsFragment extends PreferenceFragment
     mEnablePostcall.setChecked(mEnabled);
     mEnablePostcall.setOnPreferenceChangeListener(this);
 
+    mFullscreenCallerPhoto = (SwitchPreference) findPreference(FULLSCREEN_CALLER_PHOTO);
+    mFullscreenCallerPhoto.setChecked(mPrefs.getBoolean(FULLSCREEN_CALLER_PHOTO, false));
+    mFullscreenCallerPhoto.setOnPreferenceChangeListener(this);
   }
 
   @Override
@@ -61,6 +66,13 @@ public class OtherSettingsFragment extends PreferenceFragment
         mPrefs
           .edit()
           .putBoolean(ENABLE_POST_CALL, value)
+          .apply();
+        return true;
+    } else if (preference == mFullscreenCallerPhoto) {
+        boolean value = (Boolean) objValue;
+        mPrefs
+          .edit()
+          .putBoolean(FULLSCREEN_CALLER_PHOTO, value)
           .apply();
         return true;
     }

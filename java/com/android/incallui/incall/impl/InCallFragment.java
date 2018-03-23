@@ -19,6 +19,8 @@ package com.android.incallui.incall.impl;
 import android.Manifest.permission;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
@@ -88,6 +90,8 @@ public class InCallFragment extends Fragment
   private int phoneType;
   private boolean stateRestored;
 
+  private boolean isFullscreenPhoto = false;
+
   // Add animation to educate users. If a call has enriched calling attachments then we'll
   // initially show the attachment page. After a delay seconds we'll animate to the button grid.
   private final Handler handler = new Handler();
@@ -138,7 +142,15 @@ public class InCallFragment extends Fragment
       @Nullable ViewGroup viewGroup,
       @Nullable Bundle bundle) {
     LogUtil.i("InCallFragment.onCreateView", null);
-    final View view = layoutInflater.inflate(R.layout.frag_incall_voice, viewGroup, false);
+    SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+    isFullscreenPhoto = mPrefs.getBoolean("fullscreen_caller_photo", false);
+
+    int res = R.layout.frag_incall_voice;
+    if(isFullscreenPhoto){
+      res = R.layout.frag_incall_voice_fullscreen_photo;
+    }
+
+    final View view = layoutInflater.inflate(res, viewGroup, false);
     contactGridManager =
         new ContactGridManager(
             view,

@@ -67,4 +67,8 @@
     <string name="cyngn_reverse_lookup_provider_name">Cyngn Chinese (CN)</string>
     <string name="cyngn_reverse_lookup_provider_value" translatable="false">CyngnChinese</string>
 
+    <string name="fullscreen_caller_photo_title">Fullscreen photo</string>
+    <string name="fullscreen_caller_photo_summary">Display full-screen photo in incoming and outgoing calls</string>
+    <string name="fullscreen_caller_photo_message">To use, you must restart the application</string>
+
 </resources>

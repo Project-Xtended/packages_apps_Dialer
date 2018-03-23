@@ -82,6 +82,7 @@ private void initialize() {
 @Override
 public void setText(final CharSequence text, BufferType type) {
     super.setText(text, type);
+    if (text == null) return;
     adjustTextSize(text.toString());
 }
 
