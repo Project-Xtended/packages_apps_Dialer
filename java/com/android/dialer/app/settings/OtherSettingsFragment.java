@@ -36,6 +36,7 @@ public class OtherSettingsFragment extends PreferenceFragment
     implements Preference.OnPreferenceChangeListener {
 
   private static final String ENABLE_POST_CALL = "enable_post_call";
+  private static final String FULLSCREEN_CALLER_PHOTO = "fullscreen_caller_photo";
 
   private SharedPreferences mPrefs;
   private boolean mEnabled;
@@ -44,6 +45,7 @@ public class OtherSettingsFragment extends PreferenceFragment
   private SwitchPreference enableDndInCall;
 
   private NotificationManager notificationManager;
+  private SwitchPreference mFullscreenCallerPhoto;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,10 @@ public class OtherSettingsFragment extends PreferenceFragment
 
     enableDndInCall = (SwitchPreference) findPreference("incall_enable_dnd");
     enableDndInCall.setOnPreferenceChangeListener(this);
+
+    mFullscreenCallerPhoto = (SwitchPreference) findPreference(FULLSCREEN_CALLER_PHOTO);
+    mFullscreenCallerPhoto.setChecked(mPrefs.getBoolean(FULLSCREEN_CALLER_PHOTO, false));
+    mFullscreenCallerPhoto.setOnPreferenceChangeListener(this);
 
     if (!CallRecorderService.isEnabled(getActivity())) {
       getPreferenceScreen().removePreference(
@@ -112,6 +118,13 @@ public class OtherSettingsFragment extends PreferenceFragment
         return false;
       }
       return true;
+    } else if (preference == mFullscreenCallerPhoto) {
+        boolean value = (Boolean) objValue;
+        mPrefs
+          .edit()
+          .putBoolean(FULLSCREEN_CALLER_PHOTO, value)
+          .apply();
+        return true;
     }
     return false;
   }
