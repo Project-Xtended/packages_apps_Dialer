@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2013-2014 The CyanogenMod Project
-     Copyright (C) 2018 The LineageOS Project
+     Copyright (C) 2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,8 +15,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="call_via">Call via</string>
-    <string name="call_via_dialog_title">Call via\u2026</string>
+    <plurals name="hour">
+        <item quantity="one">1 hr</item>
+        <item quantity="other">%d hrs</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">1 min</item>
+        <item quantity="other">%d mins</item>
+    </plurals>
+    <plurals name="second">
+        <item quantity="one">1 sec</item>
+        <item quantity="other">%d secs</item>
+    </plurals>
 
-    <string name="call_log_stats_title">Statistics</string>
+    <plurals name="call">
+        <item quantity="one">1 call</item>
+        <item quantity="other">%d calls</item>
+    </plurals>
 </resources>
+
