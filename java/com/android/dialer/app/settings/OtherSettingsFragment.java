@@ -28,6 +28,9 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+
+import com.android.dialer.callrecord.impl.CallRecorderService;
+
 import com.android.dialer.app.R;
 
 public class OtherSettingsFragment extends PreferenceFragment
@@ -61,6 +64,11 @@ public class OtherSettingsFragment extends PreferenceFragment
 
     enableDndInCall = (SwitchPreference) findPreference("incall_enable_dnd");
     enableDndInCall.setOnPreferenceChangeListener(this);
+
+    if (!CallRecorderService.isEnabled(getActivity())) {
+      getPreferenceScreen().removePreference(
+          findPreference(context.getString(R.string.call_recording_category_key)));
+    }
     notificationManager = context.getSystemService(NotificationManager.class);
 
   }
