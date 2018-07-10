@@ -75,6 +75,11 @@
     android:key="@string/call_recording_category_key"
     android:title="@string/call_recording_category_title">
 
+    <SwitchPreference
+      android:defaultValue="false"
+      android:key="@string/auto_call_recording_key"
+      android:title="@string/auto_call_recording_title"/>
+
     <ListPreference
       android:key="@string/call_recording_format_key"
       android:title="@string/call_recording_format"
