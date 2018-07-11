@@ -68,6 +68,9 @@
     <string name="fullscreen_caller_photo_summary">Отображать полноэкранное фото во входящих и исходящих звонках</string>
     <string name="fullscreen_caller_photo_message">Для применения необходимо перезапустить приложение</string>
 
-    <string name="auto_call_recording_title">Автозапись разговора</string>
+    <string name="auto_call_recording_title">Автозапись звонков</string>
+
+    <string name="call_recording_category_title">Запись звонков</string>
+    <string name="call_recording_format">Формат аудио</string>
 
 </resources>
