@@ -109,6 +109,11 @@ public class CallButtonPresenter
 
     CallRecorder recorder = CallRecorder.getInstance();
     recorder.addRecordingProgressListener(mRecordingProgressListener);
+    if(recorder.isRecording()){
+      mInCallButtonUi.setCallRecordingState(true);
+    } else {
+      mInCallButtonUi.setCallRecordingState(false);
+    }
 
     // Update the buttons state immediately for the current call
     onStateChange(InCallState.NO_CALLS, inCallPresenter.getInCallState(), CallList.getInstance());
@@ -142,9 +147,6 @@ public class CallButtonPresenter
       mCall = callList.getOutgoingCall();
     } else if (newState == InCallState.INCALL) {
       mCall = callList.getActiveOrBackgroundCall();
-//     final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-//     boolean warningPresented = prefs.getBoolean(KEY_RECORDING_WARNING_PRESENTED, false);
-
 	    if (!mIsRecording && isEnabled && mCall != null) {
 	        mIsRecording = true;
 	        new Handler().postDelayed(new Runnable() {
@@ -169,10 +171,8 @@ public class CallButtonPresenter
       }
       mCall = callList.getIncomingCall();
     } else {
-	    if (isEnabled) {
-            if (recorder.isRecording()) {
-                recorder.finishRecording();
-            }
+        if (isEnabled && recorder.isRecording()) {
+          recorder.finishRecording();
 	    }
 	    mCall = null;
     }    
