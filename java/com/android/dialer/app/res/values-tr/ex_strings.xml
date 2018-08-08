@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Nitrogen OS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="other_settings_label">Diğer ayarlar</string>
+
+    <!-- Dialer postcall -->
+    <string name="enable_post_call_title">Posta araması</string>
+    <string name="enable_post_call_summary">Ekranın alt kısmında posta araması bildirimlerini etkinleştir</string>
+
+    <string name="smart_mute_title">Akıllı susturma</string>
+    <string name="smart_mute_summary">Cihazı çevirerek gelen aramayı sustur</string>
+
+    <!-- Proximity speaker -->
+    <string name="speaker_settings_label">Yakınlık hoparlörü</string>
+    <string name="prox_auto_speaker_title">Otomatik yakınlık hoparlörü</string>
+    <string name="prox_auto_speaker_summary">Telefonunuzu kulağınızdan çektiğinizde hoparlörü otomatik olarak etkinleştirir</string>
+    <string name="prox_auto_speaker_delay_title">Hoparlör gecikmesi</string>
+    <string name="prox_auto_speaker_delay_dialog_title">Hoparlör gecikmesi (ms)</string>
+    <string name="prox_auto_speaker_delay_summary">Hoparlör <xliff:g id="number">%d</xliff:g> ms içinde aktif edilecektir</string>
+    <string name="prox_auto_speaker_incall_only_title">Sadece arama sırasında</string>
+    <string name="prox_auto_speaker_incall_only_summary_on">Giden aramalarda dinleyici sadece alıcı taraf cevapladıktan sonra aktif hale gelecektir</string>
+    <string name="prox_auto_speaker_incall_only_summary_off">Dinleyici aramayı cevapladığı durumda etkin olacak (varsayılan)</string>
+
+    <string name="prox_auto_answer_incall_only_title">Otomatik cevaplama</string>
+    <string name="prox_auto_answer_incall_only_summary">Otomatik cevaplamak için yakınlık sensörünü kullan</string>
+
+    <string name="auto_answer_call_title">Otomatik cevaplama</string>
+    <string name="auto_answer_call_summary">Bağlı BT veya Kablolu kulaklık ile otomatik cevaplama kullan</string>
+    <string name="auto_answer_delay_title">Otomatik cevaplama gecikmesi</string>
+    <string name="auto_answer_dialog_title">Otomatik cevaplama gecikmesi (ms)</string>
+    <string name="auto_answer_delay_summary">Otomatik cevaplama <xliff:g id="number">%d</xliff:g> ms içinde etkinleştirilicek</string>
+
+    <!-- DND during call -->
+    <string name="incall_enable_dnd_title">Çağrı sırasında rahatsız etmeyini etkinleştir</string>
+    <string name="incall_enable_dnd_summary">Bu seçeneği kullanmak ve rahatsız etmeyin modunun ayarlarını değiştirmek için telefon uygulamasına erişim vermeniz gerekir.</string>
+
+    <!-- Forward lookup -->
+    <string name="nearby_places">Yakın yerler</string>
+    <string name="people">İnsanlar</string>
+
+    <!-- Number lookup -->
+    <string name="lookup_settings_label">Telefon numarası arama</string>
+    <string name="lookup_settings_description">Bilinmeyen telefon numaraları aranması</string>
+    <string name="enable_forward_lookup_title">Yakın yer arama</string>
+    <string name="enable_forward_lookup_summary">Çeviri içinde arama yaparken yakındaki yerleri göster</string>
+    <string name="enable_people_lookup_title">Kişi araması</string>
+    <string name="enable_people_lookup_summary">Çeviricide arama yaparken kişiler için çevrimiçi sonuçlarını göster</string>
+    <string name="enable_reverse_lookup_title">Bilinmeyen numara arama</string>
+    <string name="enable_reverse_lookup_summary">Gelen aramalarda bilinmeyen numaralar için kişi veya yer hakkında bilgi arayın</string>
+    <string name="forward_lookup_provider_title">Yakın yer arama sağlayıcı</string>
+    <string name="people_lookup_provider_title">Kişi arama sağlayıcı</string>
+    <string name="reverse_lookup_provider_title">Bilinmeyen numara arama sağlayıcı</string>
+
+    <!-- Chinese Reverse Lookup Provider -->
+    <string name="cyngn_reverse_lookup_provider_name">Cyngn çince (CN)</string>
+
+    <string name="fullscreen_caller_photo_title">Tam ekran fotoğrafı</string>
+    <string name="fullscreen_caller_photo_summary">Gelen ve giden aramalarda tam ekran fotoğrafı göster</string>
+    <string name="fullscreen_caller_photo_message">Kullanmak için uygulamayı yeniden başlatmanız gerekir</string>
+
+    <string name="auto_call_recording_title">Otomatik arama kaydı</string>
+
+</resources>
