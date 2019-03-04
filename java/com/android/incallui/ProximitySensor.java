@@ -187,6 +187,7 @@ public class ProximitySensor
     }
     if (hasOngoingCall && InCallState.OUTGOING == oldState) {
       setProxSpeaker(isProxSensorFar);
+      updateProximitySensorMode();
     }
      if (hasIncomingCall) {
       updateProxRing();
@@ -336,7 +337,7 @@ public class ProximitySensor
         uiShowing,
         CallAudioState.audioRouteToString(audioRoute));
 
-    if (isPhoneOffhook || hasIncomingCall && !screenOnImmediately) {
+    if ((isPhoneOffhook || hasIncomingCall) && !screenOnImmediately) {
       LogUtil.v("ProximitySensor.updateProximitySensorMode", "turning on proximity sensor");
       // Phone is in use!  Arrange for the screen to turn off
       // automatically when the sensor detects a close object.
