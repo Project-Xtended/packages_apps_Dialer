@@ -337,7 +337,7 @@ public class ProximitySensor
         uiShowing,
         CallAudioState.audioRouteToString(audioRoute));
 
-    if ((isPhoneOffhook || hasIncomingCall) && !screenOnImmediately) {
+    if ((isPhoneOffhook || (hasIncomingCall && proxSpeakerIncallOnly())) && !screenOnImmediately) {
       LogUtil.v("ProximitySensor.updateProximitySensorMode", "turning on proximity sensor");
       // Phone is in use!  Arrange for the screen to turn off
       // automatically when the sensor detects a close object.
@@ -391,13 +391,15 @@ public class ProximitySensor
     }
  }
 
+   private boolean proxSpeakerIncallOnly() {
+    return  Settings.System.getInt(mContext.getContentResolver(),
+        Settings.System.PROXIMITY_AUTO_SPEAKER_INCALL_ONLY, 0) == 1;
+   }
+
    private void setProxSpeaker(final boolean speaker) {
     // remove any pending audio changes scheduled
     handler.removeCallbacks(activateSpeaker);
      final int audioState = audioModeProvider.getAudioState().getRoute();
-    final boolean proxSpeakerIncallOnlyPref =
-        Settings.System.getInt(mContext.getContentResolver(),
-        Settings.System.PROXIMITY_AUTO_SPEAKER_INCALL_ONLY, 0) == 1;
     proxSpeakerDelay = Settings.System.getInt(mContext.getContentResolver(),
         Settings.System.PROXIMITY_AUTO_SPEAKER_DELAY, 3000);
      // if phone off hook (call in session), and prox speaker feature is on
@@ -412,10 +414,10 @@ public class ProximitySensor
       if (speaker && audioState != CallAudioState.ROUTE_SPEAKER) {
          // if prox incall only is off, we set to speaker as long as phone
         // is off hook, ignoring whether or not the call state is outgoing
-        if (!proxSpeakerIncallOnlyPref
+        if (!proxSpeakerIncallOnly()
             // or if prox incall only is on, we have to check the call
             // state to decide if AudioState should be speaker
-            || (proxSpeakerIncallOnlyPref && !isPhoneOutgoing)) {
+            || (proxSpeakerIncallOnly() && !isPhoneOutgoing)) {
           handler.postDelayed(activateSpeaker, proxSpeakerDelay);
         }
       } else if (!speaker) {
