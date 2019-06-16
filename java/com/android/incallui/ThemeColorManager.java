@@ -27,6 +27,7 @@ import android.telecom.TelecomManager;
 import com.android.contacts.common.util.MaterialColorMapUtils;
 import com.android.contacts.common.util.MaterialColorMapUtils.MaterialPalette;
 import com.android.incallui.call.DialerCall;
+import android.provider.Settings;
 
 /**
  * Calculates the background color for the in call window. The background color is based on the SIM
@@ -57,18 +58,19 @@ public class ThemeColorManager {
 
   public void onForegroundCallChanged(Context context, @Nullable DialerCall newForegroundCall) {
     if (newForegroundCall == null) {
-      updateThemeColors(context, getHighlightColor(context, pendingPhoneAccountHandle), false);
+      updateThemeColors(context, pendingPhoneAccountHandle, false);
     } else {
-      updateThemeColors(
-          context,
-          getHighlightColor(context, newForegroundCall.getAccountHandle()),
-          newForegroundCall.isSpam());
+      updateThemeColors(context, newForegroundCall.getAccountHandle(), newForegroundCall.isSpam());
     }
   }
 
-  private void updateThemeColors(Context context, @ColorInt int highlightColor, boolean isSpam) {
+   private void updateThemeColors(
+          Context context, @Nullable PhoneAccountHandle handle, boolean isSpam) {
 
       int accentColor = context.getResources().getColor(R.color.incall_background_accent_color);
+
+      boolean enableAccentInCall = Settings.System.getInt(context.getContentResolver(), 
+   		           Settings.System.DIALER_ACCENT_ENABLE, 1) == 1;
 
       MaterialPalette palette;
 
@@ -78,7 +80,7 @@ public class ThemeColorManager {
           backgroundColorMiddle = context.getColor(R.color.incall_background_gradient_spam_middle);
           backgroundColorBottom = context.getColor(R.color.incall_background_gradient_spam_bottom);
           backgroundColorSolid = context.getColor(R.color.incall_background_multiwindow_spam);
-      } else if (!hasExternalThemeApplied(context)) {
+      } else if (enableAccentInCall) {
           backgroundColorTop = getColorWithAlpha(accentColor, 1.0f);
           backgroundColorMiddle = getColorWithAlpha(accentColor, 0.9f);
           backgroundColorBottom = getColorWithAlpha(accentColor, 0.7f);
@@ -160,8 +162,4 @@ public class ThemeColorManager {
       return newColor;
   }
 
-  // Check to see if an external theme is applied (because we're so anti-theme :p)
-  private static boolean hasExternalThemeApplied(Context context) {
-      return context.getResources().getBoolean(R.bool.config_has_theme_applied);
-  }
 }
