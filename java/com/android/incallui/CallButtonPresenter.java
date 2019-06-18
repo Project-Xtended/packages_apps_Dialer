@@ -520,8 +520,7 @@ public class CallButtonPresenter
     }
 
     if (call != null) {
-      inCallButtonUi.updateInCallButtonUiColors(
-          InCallPresenter.getInstance().getThemeColorManager().getSecondaryColor());
+      inCallButtonUi.updateInCallButtonUiColors();
     }
 
     final boolean isEnabled =

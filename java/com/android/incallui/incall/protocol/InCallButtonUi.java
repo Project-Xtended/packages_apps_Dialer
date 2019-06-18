@@ -49,7 +49,7 @@ public interface InCallButtonUi {
    */
   void updateButtonStates();
 
-  void updateInCallButtonUiColors(@ColorInt int color);
+  void updateInCallButtonUiColors();
 
   Fragment getInCallButtonUiFragment();
 
