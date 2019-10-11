@@ -35,6 +35,7 @@ public class SpeakerSettingsFragment extends PreferenceFragment
     private static final String PROXIMITY_AUTO_SPEAKER_DELAY  = "proximity_auto_speaker_delay";
     private static final String PROXIMITY_AUTO_SPEAKER_INCALL_ONLY  = "proximity_auto_speaker_incall_only";
     private static final String PROXIMITY_AUTO_ANSWER_INCALL_ONLY  = "proximity_auto_answer_incall_only";
+    public static final String BUTTON_SMART_MUTE_KEY = "button_smart_mute";
 
     private SwitchPreference mProxSpeaker;
     private ListPreference mProxSpeakerDelay;
