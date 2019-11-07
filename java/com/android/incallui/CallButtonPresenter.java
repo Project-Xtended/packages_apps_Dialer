@@ -575,7 +575,7 @@ public class CallButtonPresenter
             && call.getState() != DialerCallState.CONNECTING;
 
     final CallRecorder recorder = CallRecorder.getInstance();
-    final boolean showCallRecordOption = recorder.isEnabled()
+    final boolean showCallRecordOption = recorder.canRecordInCurrentCountry()
         && !isVideo && call.getState() == DialerCallState.ACTIVE;
 
     otherAccount = TelecomUtil.getOtherAccount(getContext(), call.getAccountHandle());
