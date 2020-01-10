@@ -30,6 +30,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Handler;
+import android.pocket.IPocketCallback;
+import android.pocket.PocketManager;
 import android.provider.Settings;
 import com.android.incallui.call.TelecomAdapter;
 import com.android.dialer.common.LogUtil;
@@ -82,7 +84,29 @@ public class ProximitySensor
 
   private static final int SENSOR_SENSITIVITY = 4;
 
-   private final Handler handler = new Handler();
+  private final Handler handler = new Handler();
+
+  private PocketManager mPocketManager;
+  private boolean mIsDeviceInPocket;
+  private final IPocketCallback mPocketCallback = new IPocketCallback.Stub() {
+    @Override
+    public void onStateChanged(boolean isDeviceInPocket, int reason) {
+        boolean changed = false;
+        if (reason == PocketManager.REASON_SENSOR) {
+            if (isDeviceInPocket != mIsDeviceInPocket) {
+                mIsDeviceInPocket = isDeviceInPocket;
+                changed = true;
+            }
+        } else {
+            changed = isDeviceInPocket != mIsDeviceInPocket;
+            mIsDeviceInPocket = false;
+        }
+        if (changed) {
+            updateProximitySensorMode();
+        }
+     }
+    };
+
    private final Runnable activateSpeaker = new Runnable() {
     @Override
     public void run() {
@@ -96,6 +120,11 @@ public class ProximitySensor
       @NonNull AccelerometerListener accelerometerListener) {
     mContext = context;
     Trace.beginSection("ProximitySensor.Constructor");
+
+    mPocketManager = (PocketManager) context.getSystemService(Context.POCKET_SERVICE);
+        if (mPocketManager != null) {
+            mPocketManager.addCallback(mPocketCallback);
+        }
 
     mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     final boolean mIsProximitySensorDisabled = mPrefs.getBoolean(PREF_KEY_DISABLE_PROXI_SENSOR, false);
