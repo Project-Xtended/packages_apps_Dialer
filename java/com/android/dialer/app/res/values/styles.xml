@@ -52,7 +52,7 @@
     parent="android:style/Widget.Material.Light.ActionBar.TabText">
     <item name="android:textColor">?colorTextOnUnthemedDarkBackground</item>
     <item name="android:textSize">@dimen/tab_text_size</item>
-    <item name="android:fontFamily">"sans-serif-medium"</item>
+    <item name="android:fontFamily">"@*android:string/config_headlineFontFamilyMedium"</item>
     <item name="android:colorControlNormal">?android:attr/textColorPrimary</item>
   </style>
 
@@ -176,6 +176,6 @@
 
   <style name="PromoLinkStyle">
     <item name="android:textColor">?android:attr/colorPrimary</item>
-    <item name="android:fontFamily">"sans-serif-medium"</item>
+    <item name="android:fontFamily">"@*android:string/config_headlineFontFamilyMedium"</item>
   </style>
 </resources>
