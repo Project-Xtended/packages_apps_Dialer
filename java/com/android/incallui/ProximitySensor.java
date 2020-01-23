@@ -91,18 +91,8 @@ public class ProximitySensor
   private final IPocketCallback mPocketCallback = new IPocketCallback.Stub() {
     @Override
     public void onStateChanged(boolean isDeviceInPocket, int reason) {
-        boolean changed = false;
         if (reason == PocketManager.REASON_SENSOR) {
-            if (isDeviceInPocket != mIsDeviceInPocket) {
                 mIsDeviceInPocket = isDeviceInPocket;
-                changed = true;
-            }
-        } else {
-            changed = isDeviceInPocket != mIsDeviceInPocket;
-            mIsDeviceInPocket = false;
-        }
-        if (changed) {
-            updateProximitySensorMode();
         }
      }
     };
@@ -368,15 +358,15 @@ public class ProximitySensor
     LogUtil.i(
         "ProximitySensor.updateProximitySensorMode",
         "screenOnImmediately: %b, dialPadVisible: %b, "
-            + "offHook: %b, horizontal: %b, uiShowing: %b, audioRoute: %s",
+            + "offHook: %b, horizontal: %b, uiShowing: %b, audioRoute: %s, deviceInPocket: %b",
         screenOnImmediately,
         dialpadVisible,
         isPhoneOffhook,
         orientation == AccelerometerListener.ORIENTATION_HORIZONTAL,
         uiShowing,
-        CallAudioState.audioRouteToString(audioRoute));
+        CallAudioState.audioRouteToString(audioRoute), mIsDeviceInPocket);
 
-    if ((isPhoneOffhook || (hasIncomingCall && proxSpeakerIncallOnly())) && !screenOnImmediately) {
+    if ((isPhoneOffhook || (hasIncomingCall && proxSpeakerIncallOnly() && !mIsDeviceInPocket)) && !screenOnImmediately) {
       LogUtil.v("ProximitySensor.updateProximitySensorMode", "turning on proximity sensor");
       // Phone is in use!  Arrange for the screen to turn off
       // automatically when the sensor detects a close object.
