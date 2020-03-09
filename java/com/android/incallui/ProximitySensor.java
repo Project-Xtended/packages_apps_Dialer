@@ -65,6 +65,7 @@ public class ProximitySensor
   private int orientation = AccelerometerListener.ORIENTATION_UNKNOWN;
   private boolean uiShowing = false;
   private boolean hasIncomingCall = false;
+  private boolean hasOngoingCall = false;
   private boolean isPhoneOutgoing = false;
   private boolean isPhoneRinging = false;
   private boolean proximitySpeaker = false;
@@ -164,7 +165,7 @@ public class ProximitySensor
     // We ignore incoming state because we do not want to enable proximity
     // sensor during incoming call screen. We check hasLiveCall() because a disconnected call
     // can also put the in-call screen in the INCALL state.
-    boolean hasOngoingCall = InCallState.INCALL == newState && callList.hasLiveCall();
+    hasOngoingCall = InCallState.INCALL == newState && callList.hasLiveCall();
     boolean isOffhook =
         InCallState.PENDING_OUTGOING == newState
             || InCallState.OUTGOING == newState
@@ -387,7 +388,7 @@ public class ProximitySensor
     final boolean proxIncallAnswPref =
                 (Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PROXIMITY_AUTO_ANSWER_INCALL_ONLY, 0) == 1);
-    if (isNear && telecomManager != null && !isScreenReallyOff() && proxIncallAnswPref) {
+    if (isNear && telecomManager != null && !isScreenReallyOff() && !hasOngoingCall && proxIncallAnswPref) {
     telecomManager.acceptRingingCall();
     }
  }
