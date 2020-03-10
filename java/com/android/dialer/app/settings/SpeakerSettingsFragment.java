@@ -16,13 +16,16 @@
 
 package com.android.dialer.app.settings;
 
+import android.content.Context;
 import android.content.ContentResolver;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.ListPreference;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import static android.hardware.Sensor.TYPE_PROXIMITY;
 
 import com.android.dialer.R;
 
