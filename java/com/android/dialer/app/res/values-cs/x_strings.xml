@@ -11,42 +11,42 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="other_settings_label">Other settings</string>
+    <string name="other_settings_label">Další nastavení</string>
     <!-- Dialer postcall -->
-    <string name="enable_post_call_title">Post call snackbar</string>
-    <string name="enable_post_call_summary">Enable post call notifications at the bottom of screen</string>
+    <string name="enable_post_call_title">Oznámení po volání</string>
+    <string name="enable_post_call_summary">Povolit oznámení po volání v dolní části obrazovky</string>
     <!-- InCall DND -->
-    <string name="incall_enable_dnd_title">Enable Do Not Disturb during calls</string>
-    <string name="incall_dnd_dialog_message">In order to enable Do Not Disturb, the Phone app needs to be granted the permission to control the Do Not Disturb status.\nPlease allow it.</string>
-    <string name="allow">Allow</string>
-    <string name="deny">Deny</string>
+    <string name="incall_enable_dnd_title">Povolit režim Nerušit během hovoru</string>
+    <string name="incall_dnd_dialog_message">Chcete-li povolit režim Nerušit, musí být telefonní aplikaci udělena oprávnění k ovládání stavu režimu Nerušit.\nProsím povolte jej.</string>
+    <string name="allow">Povolit</string>
+    <string name="deny">Zamítnout</string>
     <!-- Call Recording -->
-    <string name="call_recording_category_title">Call recording</string>
-    <string name="call_recording_format">Audio format</string>
-    <string name="auto_call_recording_title">Auto call recording</string>
-    <string name="call_via">Call via</string>
-    <string name="call_via_dialog_title">Call via\u2026</string>
-    <string name="call_log_stats_title">Statistics</string>
-    <string name="fullscreen_caller_photo_title">Fullscreen photo</string>
-    <string name="fullscreen_caller_photo_summary">Display full-screen photo in incoming and outgoing calls</string>
-    <string name="fullscreen_caller_photo_message">To use, you must restart the application</string>
-    <string name="disable_proximity_sensor_title">Disable proximity sensor</string>
-    <string name="disable_proximity_sensor_summary">Do not turn off touchscreen and display in call based on proximity sensor</string>
-    <string name="sensor_settings_titile">Sensors</string>
+    <string name="call_recording_category_title">Nahrávání hovorů</string>
+    <string name="call_recording_format">Formát zvuku</string>
+    <string name="auto_call_recording_title">Automatické nahrávání hovorů</string>
+    <string name="call_via">Volat prostřednictvím</string>
+    <string name="call_via_dialog_title">Volat prostřednictvím\u2026</string>
+    <string name="call_log_stats_title">Statistiky</string>
+    <string name="fullscreen_caller_photo_title">Fotka přes celou obrazovku</string>
+    <string name="fullscreen_caller_photo_summary">Při volání zobrazit fotografii volajícího přes celou obrazovku</string>
+    <string name="fullscreen_caller_photo_message">Chcete-li toto použít, musíte aplikaci restartovat</string>
+    <string name="disable_proximity_sensor_title">Zakázat senzor přiblížení</string>
+    <string name="disable_proximity_sensor_summary">Na základě senzoru přiblížení nebude obrazovka vypnuta během hovoru</string>
+    <string name="sensor_settings_titile">Senzory</string>
     <!-- Proximity speaker -->
-    <string name="speaker_settings_label">Proximity speakerphone</string>
-    <string name="prox_auto_speaker_title">Automatic proximity speakerphone</string>
-    <string name="prox_auto_speaker_summary">Enable speakerphone automatically when your phone is removed from your ear</string>
-    <string name="prox_auto_speaker_delay_title">Speakerphone delay</string>
-    <string name="prox_auto_speaker_delay_dialog_title">Speakerphone delay in (ms)</string>
-    <string name="prox_auto_speaker_delay_summary">Speakerphone will be activated in <xliff:g id="number">%d</xliff:g> ms</string>
-    <string name="prox_auto_speaker_incall_only_title">Only while in call</string>
-    <string name="prox_auto_speaker_incall_only_summary_on">On outgoing calls, listener will only become active after the receiving party answers</string>
-    <string name="prox_auto_speaker_incall_only_summary_off">Listener will be active during all offhook call states (default)</string>
-    <string name="prox_auto_answer_incall_only_title">Auto answer</string>
-    <string name="prox_auto_answer_incall_only_summary">Use proximity sensor for autoanswer</string>
+    <string name="speaker_settings_label">Přiblížení reproduktoru</string>
+    <string name="prox_auto_speaker_title">Automatické přiblížení reproduktoru</string>
+    <string name="prox_auto_speaker_summary">Automaticky povolit hlasitý reproduktor při odebrání z ucha</string>
+    <string name="prox_auto_speaker_delay_title">Zpoždění hlasitého reproduktoru</string>
+    <string name="prox_auto_speaker_delay_dialog_title">Zpoždění hlasitého reproduktoru v (ms)</string>
+    <string name="prox_auto_speaker_delay_summary">Hlasitý reproduktor bude aktivován za <xliff:g id="number">%d </xliff:g> ms</string>
+    <string name="prox_auto_speaker_incall_only_title">Pouze při hovoru</string>
+    <string name="prox_auto_speaker_incall_only_summary_on">Při odchozích hovorech se reproduktor aktivuje při přijmutí hovoru protistranou</string>
+    <string name="prox_auto_speaker_incall_only_summary_off">Reproduktor bude aktivní vždy, i při vyzvánění (výchozí)</string>
+    <string name="prox_auto_answer_incall_only_title">Automatická odpověď</string>
+    <string name="prox_auto_answer_incall_only_summary">Použít senzor přiblížení pro autom. odpověď</string>
     <!-- Smart Options -->
-    <string name="smart_category_title">Gestures</string>
-    <string name="smart_mute_title">Smart mute</string>
-    <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
+    <string name="smart_category_title">Gesta</string>
+    <string name="smart_mute_title">Inteligentní ztlumení</string>
+    <string name="smart_mute_summary">Ztlumit vyzvánění příchozího hovoru otočením zařízení</string>
 </resources>

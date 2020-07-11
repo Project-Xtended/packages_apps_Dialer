@@ -11,7 +11,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="other_settings_label">Other settings</string>
+    <string name="other_settings_label">Autres paramètres</string>
     <!-- Dialer postcall -->
     <string name="enable_post_call_title">Post call snackbar</string>
     <string name="enable_post_call_summary">Enable post call notifications at the bottom of screen</string>

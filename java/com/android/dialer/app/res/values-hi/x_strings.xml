@@ -11,42 +11,42 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="other_settings_label">Other settings</string>
+    <string name="other_settings_label">अन्य सेटिंग्स</string>
     <!-- Dialer postcall -->
-    <string name="enable_post_call_title">Post call snackbar</string>
-    <string name="enable_post_call_summary">Enable post call notifications at the bottom of screen</string>
+    <string name="enable_post_call_title">कॉल समाप्ति पर जानकारी दिखाना</string>
+    <string name="enable_post_call_summary">स्क्रीन के निचले भाग पर कॉल समाप्ति के बाद की सूचना दिखाना चालू करें</string>
     <!-- InCall DND -->
-    <string name="incall_enable_dnd_title">Enable Do Not Disturb during calls</string>
-    <string name="incall_dnd_dialog_message">In order to enable Do Not Disturb, the Phone app needs to be granted the permission to control the Do Not Disturb status.\nPlease allow it.</string>
-    <string name="allow">Allow</string>
-    <string name="deny">Deny</string>
+    <string name="incall_enable_dnd_title">कॉल के दौरान \"परेशान ना करें\" मोड चालू करें</string>
+    <string name="incall_dnd_dialog_message">परेशान ना करें मोड चालू करने के लिए फोन ऐप को परेशान ना करें मोड नियंत्रित करने की जरूरत है।\n कृपया अनुमति दें।</string>
+    <string name="allow">अनुमति दें</string>
+    <string name="deny">अस्वीकृत करें</string>
     <!-- Call Recording -->
-    <string name="call_recording_category_title">Call recording</string>
-    <string name="call_recording_format">Audio format</string>
-    <string name="auto_call_recording_title">Auto call recording</string>
-    <string name="call_via">Call via</string>
-    <string name="call_via_dialog_title">Call via\u2026</string>
-    <string name="call_log_stats_title">Statistics</string>
-    <string name="fullscreen_caller_photo_title">Fullscreen photo</string>
+    <string name="call_recording_category_title">कॉल रिकॉर्डिंग</string>
+    <string name="call_recording_format">ऑडियो प्रारूप</string>
+    <string name="auto_call_recording_title">स्वचालित कॉल रिकॉर्डिंग</string>
+    <string name="call_via">के माध्यम से कॉल करें</string>
+    <string name="call_via_dialog_title">\u2026 द्वारा कॉल</string>
+    <string name="call_log_stats_title">सांख्यिकी</string>
+    <string name="fullscreen_caller_photo_title">पूर्ण स्क्रीन चित्र</string>
     <string name="fullscreen_caller_photo_summary">Display full-screen photo in incoming and outgoing calls</string>
-    <string name="fullscreen_caller_photo_message">To use, you must restart the application</string>
+    <string name="fullscreen_caller_photo_message">उपयोग करने के लिए ऐप्लीकेशन फिर से शुरू करें</string>
     <string name="disable_proximity_sensor_title">Disable proximity sensor</string>
     <string name="disable_proximity_sensor_summary">Do not turn off touchscreen and display in call based on proximity sensor</string>
-    <string name="sensor_settings_titile">Sensors</string>
+    <string name="sensor_settings_titile">ज्ञानेन्द्रियाँ</string>
     <!-- Proximity speaker -->
-    <string name="speaker_settings_label">Proximity speakerphone</string>
-    <string name="prox_auto_speaker_title">Automatic proximity speakerphone</string>
-    <string name="prox_auto_speaker_summary">Enable speakerphone automatically when your phone is removed from your ear</string>
-    <string name="prox_auto_speaker_delay_title">Speakerphone delay</string>
-    <string name="prox_auto_speaker_delay_dialog_title">Speakerphone delay in (ms)</string>
-    <string name="prox_auto_speaker_delay_summary">Speakerphone will be activated in <xliff:g id="number">%d</xliff:g> ms</string>
-    <string name="prox_auto_speaker_incall_only_title">Only while in call</string>
-    <string name="prox_auto_speaker_incall_only_summary_on">On outgoing calls, listener will only become active after the receiving party answers</string>
-    <string name="prox_auto_speaker_incall_only_summary_off">Listener will be active during all offhook call states (default)</string>
+    <string name="speaker_settings_label">निकटता स्पीकरफ़ोन</string>
+    <string name="prox_auto_speaker_title">स्वचालित निकटता स्पीकरफोन</string>
+    <string name="prox_auto_speaker_summary">फ़ोन कान के पास से हटाते ही स्पीकरफ़ोन स्वत शुरू करे</string>
+    <string name="prox_auto_speaker_delay_title">स्पीकरफ़ोन में देरी</string>
+    <string name="prox_auto_speaker_delay_dialog_title">स्पीकरफ़ोन विलम्ब (मिलिसेकण्ड्स) में</string>
+    <string name="prox_auto_speaker_delay_summary">स्पीकरफ़ोन शुरू होगा <xliff:g id="संख्या">%d</xliff:g> ms में</string>
+    <string name="prox_auto_speaker_incall_only_title">केवल कॉल कि अवधि में</string>
+    <string name="prox_auto_speaker_incall_only_summary_on">जावक कॉलों पर श्रोता केवल प्राप्त कर पार्टी के जवाब के बाद सक्रिय हो जाएगा</string>
+    <string name="prox_auto_speaker_incall_only_summary_off">श्रोता सभी offhook कॉल के दौरान सक्रिय हो जाएगा (डिफ़ॉल्ट)</string>
     <string name="prox_auto_answer_incall_only_title">Auto answer</string>
     <string name="prox_auto_answer_incall_only_summary">Use proximity sensor for autoanswer</string>
     <!-- Smart Options -->
-    <string name="smart_category_title">Gestures</string>
-    <string name="smart_mute_title">Smart mute</string>
-    <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
+    <string name="smart_category_title">संकेत</string>
+    <string name="smart_mute_title">होशियार मूक</string>
+    <string name="smart_mute_summary">डिवाइस पलटते ही इनकमिंग कॉल की घंटी शांत हो जाये</string>
 </resources>

@@ -11,42 +11,42 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="other_settings_label">Other settings</string>
+    <string name="other_settings_label">Altre impostazioni</string>
     <!-- Dialer postcall -->
-    <string name="enable_post_call_title">Post call snackbar</string>
-    <string name="enable_post_call_summary">Enable post call notifications at the bottom of screen</string>
+    <string name="enable_post_call_title">Messaggio dopo chiamata</string>
+    <string name="enable_post_call_summary">Attiva le notifiche dopo chiamata nella parte inferiore dello schermo</string>
     <!-- InCall DND -->
-    <string name="incall_enable_dnd_title">Enable Do Not Disturb during calls</string>
-    <string name="incall_dnd_dialog_message">In order to enable Do Not Disturb, the Phone app needs to be granted the permission to control the Do Not Disturb status.\nPlease allow it.</string>
-    <string name="allow">Allow</string>
-    <string name="deny">Deny</string>
+    <string name="incall_enable_dnd_title">Attiva la modalità Non Disturbare durante le chiamate</string>
+    <string name="incall_dnd_dialog_message">Per attivare la modalità non disturbare, il telefono deve essere autorizzato a controllare lo stato non disturbare. Consenti l\'accesso per abilitare questa funzione.</string>
+    <string name="allow">Consenti</string>
+    <string name="deny">Nega</string>
     <!-- Call Recording -->
-    <string name="call_recording_category_title">Call recording</string>
-    <string name="call_recording_format">Audio format</string>
-    <string name="auto_call_recording_title">Auto call recording</string>
-    <string name="call_via">Call via</string>
-    <string name="call_via_dialog_title">Call via\u2026</string>
-    <string name="call_log_stats_title">Statistics</string>
-    <string name="fullscreen_caller_photo_title">Fullscreen photo</string>
-    <string name="fullscreen_caller_photo_summary">Display full-screen photo in incoming and outgoing calls</string>
-    <string name="fullscreen_caller_photo_message">To use, you must restart the application</string>
-    <string name="disable_proximity_sensor_title">Disable proximity sensor</string>
-    <string name="disable_proximity_sensor_summary">Do not turn off touchscreen and display in call based on proximity sensor</string>
-    <string name="sensor_settings_titile">Sensors</string>
+    <string name="call_recording_category_title">Registrazione chiamata</string>
+    <string name="call_recording_format">Formato audio</string>
+    <string name="auto_call_recording_title">Registrazione automatica chiamata</string>
+    <string name="call_via">Chiama con</string>
+    <string name="call_via_dialog_title">Chiama tramite\u2026</string>
+    <string name="call_log_stats_title">Statistiche</string>
+    <string name="fullscreen_caller_photo_title">Foto a schermo intero</string>
+    <string name="fullscreen_caller_photo_summary">Visualizza la foto a schermo intero nelle chiamate in entrata e in uscita</string>
+    <string name="fullscreen_caller_photo_message">Per utilizzarlo, è necessario riavviare l\'applicazione</string>
+    <string name="disable_proximity_sensor_title">Disabilita il sensore di prossimità</string>
+    <string name="disable_proximity_sensor_summary">Non disattivare il touchscrern e visualizza la chiamata in arrivo in base al sensore di prossimità</string>
+    <string name="sensor_settings_titile">Sensori</string>
     <!-- Proximity speaker -->
-    <string name="speaker_settings_label">Proximity speakerphone</string>
-    <string name="prox_auto_speaker_title">Automatic proximity speakerphone</string>
-    <string name="prox_auto_speaker_summary">Enable speakerphone automatically when your phone is removed from your ear</string>
-    <string name="prox_auto_speaker_delay_title">Speakerphone delay</string>
-    <string name="prox_auto_speaker_delay_dialog_title">Speakerphone delay in (ms)</string>
-    <string name="prox_auto_speaker_delay_summary">Speakerphone will be activated in <xliff:g id="number">%d</xliff:g> ms</string>
-    <string name="prox_auto_speaker_incall_only_title">Only while in call</string>
-    <string name="prox_auto_speaker_incall_only_summary_on">On outgoing calls, listener will only become active after the receiving party answers</string>
-    <string name="prox_auto_speaker_incall_only_summary_off">Listener will be active during all offhook call states (default)</string>
-    <string name="prox_auto_answer_incall_only_title">Auto answer</string>
-    <string name="prox_auto_answer_incall_only_summary">Use proximity sensor for autoanswer</string>
+    <string name="speaker_settings_label">Sensore di prossimità del vivavoce</string>
+    <string name="prox_auto_speaker_title">Vivavoce automatico con sensore di prossimità</string>
+    <string name="prox_auto_speaker_summary">Attiva automaticamente il vivavoce quando il telefono viene allontanato dall\'orecchio</string>
+    <string name="prox_auto_speaker_delay_title">Ritardo attivazione vivavoce</string>
+    <string name="prox_auto_speaker_delay_dialog_title">Ritardo inserimento vivavoce in (ms)</string>
+    <string name="prox_auto_speaker_delay_summary">Il vivavoce si attiverà in <xliff:g id="number">%d</xliff:g> ms</string>
+    <string name="prox_auto_speaker_incall_only_title">Solo durante la chiamata</string>
+    <string name="prox_auto_speaker_incall_only_summary_on">Nelle chiamate in uscita, il vivavoce si attiverà dopo la risposta alla chiamata</string>
+    <string name="prox_auto_speaker_incall_only_summary_off">Il vivavoce sarà attivato per tutte le chiamate (predefinito)</string>
+    <string name="prox_auto_answer_incall_only_title">Risposta automatica</string>
+    <string name="prox_auto_answer_incall_only_summary">Usa il sensore di prossimità per la risposta automatica</string>
     <!-- Smart Options -->
-    <string name="smart_category_title">Gestures</string>
-    <string name="smart_mute_title">Smart mute</string>
-    <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
+    <string name="smart_category_title">Gesti</string>
+    <string name="smart_mute_title">Silenzia in modo intelligente</string>
+    <string name="smart_mute_summary">Silenzia la chiamata in arrivo capovolgendo il dispositivo</string>
 </resources>
