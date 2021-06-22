@@ -15,7 +15,6 @@
  */
 
 package com.android.dialer.app.calllog;
-import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 import static android.Manifest.permission.READ_CALL_LOG;
 
@@ -313,11 +312,8 @@ public class CallLogFragment extends Fragment
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder holder, int direction) {
-                Log.d("satyam", "onSwiped: "+holder);
-                Log.d("satyam", "onSwiped: "+ holder.getItemViewType());
 		if (holder instanceof CallLogListItemViewHolder){
 		CallLogListItemViewHolder viewHolder = ((CallLogListItemViewHolder)holder);
-		Log.d("satyam", ""+viewHolder+" "+viewHolder.displayNumber+" "+viewHolder.number+" "+viewHolder.nameOrNumber);
 		getContext().startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel: "+viewHolder.number)));
 		}
 		adapter.notifyItemChanged(holder.getAdapterPosition());
@@ -325,13 +321,6 @@ public class CallLogFragment extends Fragment
 
             @Override
             public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-                new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                        .addBackgroundColor(getContext().getColor(R.color.rec_decorator))
-                        .addSwipeLeftLabel("Calling")
-			.setSwipeRightLabelColor(getContext().getColor(R.color.rec_textcolor))
-                        .create()
-                        .decorate();
-                Log.d(TAG, "onChildDraw: " + dX + " " + dY + " " + (actionState == ItemTouchHelper.ACTION_STATE_DRAG) + " " + isCurrentlyActive);
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
 
             }
