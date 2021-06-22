@@ -43,7 +43,6 @@ import com.android.dialer.glidephotomanager.PhotoInfo;
 import com.android.dialer.lettertile.LetterTileDrawable;
 import com.android.dialer.util.DrawableConverter;
 import com.android.dialer.widget.BidiTextView;
-import com.android.incallui.autoresizetext.CustomAutoResizeTextView;
 import com.android.incallui.incall.protocol.ContactPhotoType;
 import com.android.incallui.incall.protocol.PrimaryCallState;
 import com.android.incallui.incall.protocol.PrimaryInfo;
@@ -300,14 +299,10 @@ public class ContactGridManager {
 
       // Set direction of the name field
       int nameDirection = View.TEXT_DIRECTION_INHERIT;
-      boolean singleLine = false;
       if (primaryInfo.nameIsNumber()) {
         nameDirection = View.TEXT_DIRECTION_LTR;
-        singleLine = true;
       }
       contactNameTextView.setTextDirection(nameDirection);
-      contactNameTextView.setSingleLine(singleLine);
-      ((CustomAutoResizeTextView)contactNameTextView).setMaxLines(2);
     }
 
     if (avatarImageView != null) {
@@ -388,7 +383,6 @@ public class ContactGridManager {
       avatarImageView.invalidate();
       avatarImageView.setBackground(letterTile);
     }
-   }
   }
   /**
    * Updates row 2. For example:
