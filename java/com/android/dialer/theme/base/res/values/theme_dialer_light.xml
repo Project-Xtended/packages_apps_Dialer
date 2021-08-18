@@ -51,15 +51,15 @@
     <!-- These values should be used to set text color. -->
     <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
     <item name="android:textColorSecondary">@color/dialer_secondary_text_color</item>
-    <item name="android:textColorPrimaryInverse">@color/dialer_dark_primary_text_color</item>
-    <item name="android:textColorSecondaryInverse">@color/dialer_dark_secondary_text_color</item>
+    <item name="android:textColorPrimaryInverse">@color/google_grey_300</item>
+    <item name="android:textColorSecondaryInverse">@color/google_grey_400</item>
     <item name="android:textColorHint">@color/google_grey_600</item>
 
     <!-- These will be automatically used to color most Appcompat/Material widgets. -->
     <item name="android:colorPrimary">@color/dialer_theme_color</item>
     <item name="colorPrimary">@color/dialer_theme_color</item>
-    <item name="android:colorPrimaryDark">@color/dialer_theme_color</item>
-    <item name="colorPrimaryDark">@color/dialer_theme_color</item>
+    <item name="android:colorPrimaryDark">@color/dialer_theme_color_dark</item>
+    <item name="colorPrimaryDark">@color/dialer_theme_color_dark</item>
     <item name="android:colorAccent">@color/dialer_secondary_color</item>
     <item name="colorAccent">@color/dialer_secondary_color</item>
 

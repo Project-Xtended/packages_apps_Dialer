@@ -28,6 +28,5 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:textColor="?android:attr/textColorSecondary"
     android:text="@string/make_primary"/>
 </LinearLayout>
