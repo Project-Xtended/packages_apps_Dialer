@@ -249,11 +249,12 @@ public class InCallActivity extends TransactionSafeFragmentActivity
     }
 
     inCallOrientationEventListener = new InCallOrientationEventListener(this);
-
+/*
     getWindow()
         .getDecorView()
         .setSystemUiVisibility(
-            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+*/
 
     pseudoBlackScreenOverlay = findViewById(R.id.psuedo_black_screen_overlay);
     sendBroadcast(CallPendingActivity.getFinishBroadcast());
@@ -874,11 +875,12 @@ public class InCallActivity extends TransactionSafeFragmentActivity
 
   public void onForegroundCallChanged(DialerCall newForegroundCall) {
     updateTaskDescription();
-
+/*
     if (newForegroundCall == null || !didShowAnswerScreen) {
       LogUtil.v("InCallActivity.onForegroundCallChanged", "resetting background color");
-      updateWindowBackgroundColor(0 /* progress */);
+      updateWindowBackgroundColor(0 /* progress );
     }
+*/
   }
 
   private void updateTaskDescription() {

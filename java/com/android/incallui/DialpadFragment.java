@@ -142,7 +142,6 @@ public class DialpadFragment extends BaseFragment<DialpadPresenter, DialpadUi>
     final View parent = layoutInflater.inflate(R.layout.incall_dialpad_fragment, container, false);
     dialpadView = (DialpadView) parent.findViewById(R.id.dialpad_view);
     dialpadView.setCanDigitsBeEdited(false);
-    dialpadView.setBackgroundResource(R.color.incall_dialpad_background);
     dtmfDialerField = (EditText) parent.findViewById(R.id.digits);
     if (dtmfDialerField != null) {
       LogUtil.i("DialpadFragment.onCreateView", "creating dtmfKeyListener");
@@ -170,7 +169,7 @@ public class DialpadFragment extends BaseFragment<DialpadPresenter, DialpadUi>
   }
 
   public void updateColors() {
-    int textColor = InCallPresenter.getInstance().getThemeColorManager().getPrimaryColor();
+/*    int textColor = InCallPresenter.getInstance().getThemeColorManager().getTextColorPrimary();
 
     if (currentTextColor == textColor) {
       return;
@@ -183,6 +182,7 @@ public class DialpadFragment extends BaseFragment<DialpadPresenter, DialpadUi>
     }
 
     currentTextColor = textColor;
+*/
   }
 
   @Override

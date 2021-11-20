@@ -27,9 +27,6 @@
     <item name="actionBarWidgetTheme">@null</item>
     <item name="actionBarTheme">@style/DialerActionBarBaseTheme</item>
     <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
-
-    <item name="android:colorPrimaryDark">@color/settings_primary_dark</item>
-    <item name="colorControlHighlight">@color/dialer_ripple_color</item>
   </style>
 
   <style name="Dialer.ThemeBase.NoActionBar">
@@ -37,24 +34,20 @@
         base style once none of our activities depend on ActionBar anymore. -->
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
-
-    <item name="android:colorPrimaryDark">@color/settings_primary_dark</item>
-    <item name="colorControlHighlight">@color/dialer_ripple_color</item>
   </style>
 
   <!-- Activities and Applications should inherit from one of the themes above. -->
   <style name="Dialer.ThemeBase">
     <item name="android:forceDarkAllowed">true</item>
     <!-- These values should be used to color all backgrounds. -->
-    <item name="android:colorBackground">@color/dialer_background_color</item>
-    <item name="android:colorBackgroundFloating">@android:color/white</item>
-    <item name="colorBackgroundSearchBar">@color/dialer_search_bar_color</item>
-
+    <item name="android:colorBackground">@*android:color/primary_device_default_light</item>
+    <item name="android:colorBackgroundFloating">@color/dialer_color_floating</item>
+    <item name="android:windowLightStatusBar">true</item>
     <!-- These values should be used to set text color. -->
     <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
     <item name="android:textColorSecondary">@color/dialer_secondary_text_color</item>
-    <item name="android:textColorPrimaryInverse">@color/google_grey_300</item>
-    <item name="android:textColorSecondaryInverse">@color/google_grey_400</item>
+    <item name="android:textColorPrimaryInverse">@color/dialer_primary_text_color</item>
+    <item name="android:textColorSecondaryInverse">@color/dialer_secondary_text_color</item>
     <item name="android:textColorHint">@color/google_grey_600</item>
 
     <!-- These will be automatically used to color most Appcompat/Material widgets. -->
@@ -64,15 +57,16 @@
     <item name="colorPrimaryDark">@color/dialer_theme_color_dark</item>
     <item name="android:colorAccent">@color/dialer_secondary_color</item>
     <item name="colorAccent">@color/dialer_secondary_color</item>
-
+    <item name="actionBarStyle">@style/DialerActionBarBaseStyle</item>
+    <item name="actionBarTheme">@style/DialerActionBarBaseTheme</item>
     <!-- Used to automatically style check/selected checkbox, switches and radio buttons -->
-    <item name="colorControlActivated">?android:attr/colorPrimary</item>
+    <item name="colorControlActivated">?android:attr/colorAccent</item>
 
     <!-- Dialer specific attributes. -->
-    <item name="colorIcon">@color/google_grey_700</item>
-    <item name="colorIconSecondary">@color/google_grey_400</item>
-    <item name="colorTextOnUnthemedDarkBackground">@android:color/white</item>
-    <item name="colorIconOnUnthemedDarkBackground">@android:color/white</item>
+    <item name="colorIcon">?colorAccent</item>
+    <item name="colorIconSecondary">@color/dialer_secondary_text_color</item>
+    <item name="colorTextOnUnthemedDarkBackground">@color/dialer_primary_text_color</item>
+    <item name="colorIconOnUnthemedDarkBackground">@color/dialer_primary_text_color</item>
     <item name="colorMobileTerminatingChatText">@color/google_grey_900</item>
     <item name="colorMobileTerminatingChatBackground">@color/google_grey_100</item>
     <item name="colorMobileOriginatingChatText">@color/google_blue_900</item>
@@ -96,9 +90,10 @@
       parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
     <item name="android:background">?android:attr/colorPrimary</item>
     <item name="background">?android:attr/colorPrimary</item>
+    <item name="colorControlNormal">?android:attr/textColorPrimary</item>
   </style>
-  <style name="DialerActionBarBaseTheme"
-      parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    <item name="colorControlNormal">@android:color/white</item>
+  <style name="DialerActionBarBaseTheme">
+<!--    <item name="android:textColorPrimary">@color/dialer_primary_text_color</item> -->
+    <item name="colorControlNormal">?android:attr/textColorPrimary</item>
   </style>
 </resources>

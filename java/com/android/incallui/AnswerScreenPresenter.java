@@ -218,10 +218,12 @@ public class AnswerScreenPresenter
 
   @Override
   public void updateWindowBackgroundColor(@FloatRange(from = -1f, to = 1.0f) float progress) {
+/*
     InCallActivity activity = (InCallActivity) answerScreen.getAnswerScreenFragment().getActivity();
     if (activity != null) {
       activity.updateWindowBackgroundColor(progress);
     }
+*/
   }
 
   private class AnswerOnDisconnected implements DialerCallListener {

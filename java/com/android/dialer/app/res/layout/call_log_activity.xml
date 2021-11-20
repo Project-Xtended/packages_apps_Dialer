@@ -19,6 +19,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
+    style="@style/DialtactsActionBarTabTextStyle"
     android:orientation="vertical">
   <com.android.contacts.common.list.ViewPagerTabs
       android:id="@+id/viewpager_header"

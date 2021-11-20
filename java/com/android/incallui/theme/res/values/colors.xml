@@ -53,9 +53,9 @@
     <item>#841F10</item>
   </array>
 
-  <color name="incall_background_gradient_top">#E91141BB</color>
-  <color name="incall_background_gradient_middle">#E91141BB</color>
-  <color name="incall_background_gradient_bottom">#CC229FEB</color>
+  <color name="incall_background_gradient_top">@android:color/system_neutral2_400</color>
+  <color name="incall_background_gradient_middle">@android:color/system_neutral2_400</color>
+  <color name="incall_background_gradient_bottom">@android:color/system_neutral2_400</color>
 
   <color name="incall_background_multiwindow">#E91141BB</color>
 
@@ -64,4 +64,6 @@
   <color name="incall_background_gradient_spam_bottom">#B8E55135</color>
 
   <color name="incall_background_multiwindow_spam">#E9C22E2E</color>
+
+  <color name="incall_text_color">@color/dialer_primary_text_color</color>
 </resources>

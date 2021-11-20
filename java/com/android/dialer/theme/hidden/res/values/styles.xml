@@ -23,7 +23,7 @@
 
     <!-- Used to style link text -->
     <item name="android:textColorLink">@color/dialer_theme_color</item>
-
+    <item name="android:dialogCornerRadius">@*android:dimen/config_dialogCornerRadius</item>
     <!-- Used to automatically style AlertDialogs -->
     <item name="alertDialogTheme">@style/AlertDialogTheme</item>
     <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
@@ -36,7 +36,7 @@
 
     <!-- Used to style link text -->
     <item name="android:textColorLink">@color/dialer_theme_color</item>
-
+    <item name="android:dialogCornerRadius">@*android:dimen/config_dialogCornerRadius</item>
     <!-- Used to automatically style AlertDialogs -->
     <item name="alertDialogTheme">@style/AlertDialogTheme</item>
     <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
@@ -50,12 +50,14 @@
 
   <!-- Used to style all Dialer's AlertDialogs. Every button is awarded this for free if the parent
      activity's theme extends from Dialer.ThemeBase(.NoActionBar) or doesn't specify a theme. -->
-  <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+  <style name="AlertDialogTheme" parent="@*android:style/Theme.Material.Light.Dialog">
+    <item name="android:colorBackground">@*android:color/primary_device_default_light</item>
     <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
     <!-- TODO(a bug): figure out why ?android:attr/colorPrimary doesn't work here -->
-    <item name="android:colorAccent">@color/dialer_theme_color</item>
-    <item name="colorAccent">@color/dialer_theme_color</item>
+    <item name="android:colorAccent">@*android:color/accent_device_default</item>
+    <item name="colorAccent">@*android:color/accent_device_default</item>
     <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
     <item name="android:textColorSecondary">@color/dialer_secondary_text_color</item>
+    <item name="android:dialogCornerRadius">@*android:dimen/config_dialogCornerRadius</item>
   </style>
 </resources>
