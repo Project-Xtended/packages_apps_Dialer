@@ -37,8 +37,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.dialer.theme.base.ThemeComponent;
-
 /** A button to show on the incall screen */
 public class CheckableLabeledButton extends LinearLayout implements Checkable {
 
@@ -97,7 +95,7 @@ public class CheckableLabeledButton extends LinearLayout implements Checkable {
     iconView.setImageDrawable(icon);
     iconView.setImageTintMode(Mode.SRC_IN);
     iconView.setImageTintList(
-        getResources().getColorStateList(R.color.incall_button_icon));
+        getResources().getColorStateList(R.color.incall_button_icon, context.getTheme()));
 
     iconView.setBackground(
         getResources().getDrawable(R.drawable.incall_button_background, context.getTheme()));
@@ -138,7 +136,9 @@ public class CheckableLabeledButton extends LinearLayout implements Checkable {
 
   public void setCheckedColor(@ColorInt int color) {
     iconView.setImageTintList(
-        getResources().getColorStateList(R.color.incall_text_color));
+        new ColorStateList(
+            new int[][] {new int[] {android.R.attr.state_checked}, new int[] {}},
+            new int[] {color, Color.WHITE}));
   }
 
   public Drawable getIconDrawable() {

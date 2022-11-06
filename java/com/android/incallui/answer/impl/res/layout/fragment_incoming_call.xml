@@ -178,7 +178,6 @@
       android:layout_gravity="bottom|start"
       android:scaleType="center"
       android:src="@drawable/quantum_ic_message_white_24"
-      android:tint="?android:attr/textColorPrimary"
       android:visibility="invisible"
       tools:visibility="visible"/>
 
@@ -189,7 +188,6 @@
       android:layout_gravity="bottom|end"
       android:scaleType="center"
       android:src="@drawable/ic_end_answer_32"
-      android:tint="?android:attr/textColorPrimary"
       android:visibility="invisible"
       tools:visibility="visible"/>
 </com.android.incallui.answer.impl.AffordanceHolderLayout>

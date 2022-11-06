@@ -78,7 +78,7 @@ public final class ContentWithLearnMoreSpanner {
     int learnMoreSpanEndIndex = learnMoreSpanStartIndex + learnMore.length();
 
     contents.setSpan(
-        new TypefaceSpan("@*android:string/config_headlineFontFamilyMedium"),
+        new TypefaceSpan("sans-serif-medium"),
         learnMoreSpanStartIndex,
         learnMoreSpanEndIndex,
         Spanned.SPAN_INCLUSIVE_INCLUSIVE);

@@ -18,7 +18,6 @@ package com.android.dialer.widget;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v7.widget.Toolbar;
@@ -40,9 +39,7 @@ public class DialerToolbar extends Toolbar {
 
     setElevation(getResources().getDimensionPixelSize(R.dimen.toolbar_elevation));
     setBackgroundColor(ThemeComponent.get(context).theme().getColorPrimary());
-    Drawable icon = context.getDrawable(R.drawable.quantum_ic_close_white_24);
-    icon.setTint(ThemeComponent.get(context).theme().getTextColorPrimary());
-    setNavigationIcon(icon);
+    setNavigationIcon(R.drawable.quantum_ic_close_white_24);
     setNavigationContentDescription(R.string.toolbar_close);
     setNavigationOnClickListener(v -> ((Activity) context).finish());
     setPaddingRelative(

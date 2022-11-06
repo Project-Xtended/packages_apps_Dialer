@@ -16,5 +16,5 @@
 
 <resources>
   <color name="nav_item">#80FFFFFF</color>
-  <color name="nav_item_selected">@*android:color/accent_device_default</color>
+  <color name="nav_item_selected">#FFFFFF</color>
 </resources>
